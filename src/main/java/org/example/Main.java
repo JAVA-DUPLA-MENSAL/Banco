@@ -19,7 +19,7 @@ public class Main {
         do{
             System.out.println("          Bem vindo " + conta.nome + " Conta " + conta.conta);
             System.out.println("==================================================");
-            System.out.println(" 1 - Resgate \n 2 - Depósito \n 3 - Investimento PIX \n 0 - SAIR");
+            System.out.println(" 1 - Resgate \n 2 - Depósito \n 3 - Investimento PIX \n 4 - Saldo e investimento \n 0 - SAIR");
             System.out.println("==================================================");
 
             opc = scanner.nextInt();
@@ -37,6 +37,9 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("Ate a proxima");
+                    break;
+                case 4:
+                    conta.info();
                     break;
                 default:
                     System.out.println("esta opção não existe");

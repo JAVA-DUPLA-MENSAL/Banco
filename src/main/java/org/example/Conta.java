@@ -22,6 +22,8 @@ public class Conta {
 
     public static Double saldo = 100.0;
 
+    public  Double rendimento = 0.0;
+
     Scanner scanner = new Scanner(System.in);
 
     public void resgate(){
@@ -37,7 +39,7 @@ public class Conta {
 
             System.out.println(saldo);
         }else{
-            System.out.println("Saldo insuficiente... 190");
+            System.out.println("Saldo insuficiente...");
         }
 
     }
@@ -61,16 +63,25 @@ public class Conta {
         System.out.println("Quanto voce quer investir?");
 
         Double valorInput = scanner.nextDouble();
+        if(valorInput < saldo){
+            Double dale = saldo - valorInput;
 
-        Double dale = saldo - valorInput;
+            saldo = dale;
 
-        saldo = dale;
+            rendimento =  valorInput * 1.05;
 
-        Double valorInvestido =  valorInput * 0.05;
+            System.out.println("rendimento de:" + rendimento);
+        }else{
+            System.out.println("Saldo insuficiente...");
+        }
 
-        System.out.println("rendimento de:" + valorInvestido);
 
 
+    }
+
+    public void info(){
+        System.out.println("saldo total e de: " + saldo);
+        System.out.println("rendimento total e de: " + rendimento);
     }
 
     public Conta(String nome, String conta){
